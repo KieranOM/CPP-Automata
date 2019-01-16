@@ -5,7 +5,7 @@
 #include <tuple>
 
 // Class assumes a well-formed Partial DFA is created
-class PartialDeterministicFiniteAutomata {
+class PartialDeterministicFiniteAutomaton {
 private:
     // Finite set of states X
     std::set<int> X;
@@ -19,7 +19,7 @@ public:
     // Method to run the automata with an input
     bool accepts(std::string word);
 
-    PartialDeterministicFiniteAutomata(std::set<int> states, int initialState,
+    PartialDeterministicFiniteAutomaton(std::set<int> states, int initialState,
                                        std::set<std::tuple<int, char, int>> transitionFunctions,
                                        std::set<int> acceptingStates);
 };

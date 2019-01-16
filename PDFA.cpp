@@ -1,6 +1,6 @@
 #include "PDFA.h"
 
-bool PartialDeterministicFiniteAutomata::accepts(std::string word) {
+bool PartialDeterministicFiniteAutomaton::accepts(std::string word) {
     int state = p;
     // Loop through the input
     for (int i = 0; i < word.length(); i++) {
@@ -27,7 +27,7 @@ bool PartialDeterministicFiniteAutomata::accepts(std::string word) {
     return acc.count(state);
 };
 
-PartialDeterministicFiniteAutomata::PartialDeterministicFiniteAutomata(std::set<int> states, int initialState,
+PartialDeterministicFiniteAutomaton::PartialDeterministicFiniteAutomaton(std::set<int> states, int initialState,
                                                                        std::set<std::tuple<int, char, int>> partialTransitionFunction,
                                                                        std::set<int> acceptingStates) {
     X = states;

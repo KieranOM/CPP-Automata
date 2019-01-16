@@ -19,7 +19,7 @@ int main() {
                                       tuple<int, char, int>(18, 'c', 18)});
     set<int> acc({2});
 
-    DeterministicFiniteAutomata dfa(X, p, delta, acc);
+    DeterministicFiniteAutomaton dfa(X, p, delta, acc);
 
     printf("DFA equivalent to regex of c(bb|ca)*\n");
     printf("Testing 'c': %s\n", dfa.accepts("c") ? "true" : "false");
@@ -43,7 +43,7 @@ int main() {
              tuple<int, char, int>(3, 'b', 2), tuple<int, char, int>(95, 'a', 2)});
     acc.insert({2});
 
-    PartialDeterministicFiniteAutomata pdfa(X, p, delta, acc);
+    PartialDeterministicFiniteAutomaton pdfa(X, p, delta, acc);
 
     printf("\nPartial DFA equivalent to regex of c(bb|ca)*\n");
     printf("Testing 'c': %s\n", pdfa.accepts("c") ? "true" : "false");

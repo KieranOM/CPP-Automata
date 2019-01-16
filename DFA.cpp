@@ -1,6 +1,6 @@
 #include "DFA.h"
 
-bool DeterministicFiniteAutomata::accepts(std::string word) {
+bool DeterministicFiniteAutomaton::accepts(std::string word) {
     int state = p;
     // Loop through the input
     for (int i = 0; i < word.length(); i++) {
@@ -19,7 +19,7 @@ bool DeterministicFiniteAutomata::accepts(std::string word) {
     return acc.count(state);
 };
 
-DeterministicFiniteAutomata::DeterministicFiniteAutomata(std::set<int> states, int initialState,
+DeterministicFiniteAutomaton::DeterministicFiniteAutomaton(std::set<int> states, int initialState,
                                                          std::set<std::tuple<int, char, int>> transitionFunction,
                                                          std::set<int> acceptingStates) {
     X = states;

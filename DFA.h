@@ -5,7 +5,7 @@
 #include <tuple>
 
 // Class assumes a well-formed DFA is created
-class DeterministicFiniteAutomata {
+class DeterministicFiniteAutomaton {
 private:
     // Finite set of states X
     std::set<int> X;
@@ -19,7 +19,7 @@ public:
     // Method to run the automata with an input
     bool accepts(std::string word);
 
-    DeterministicFiniteAutomata(std::set<int> states, int initialState,
+    DeterministicFiniteAutomaton(std::set<int> states, int initialState,
                                 std::set<std::tuple<int, char, int>> transitionFunctions,
                                 std::set<int> acceptingStates);
 };

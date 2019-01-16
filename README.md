@@ -29,7 +29,7 @@ set<tuple<int, char, int>> delta({tuple<int, char, int>(7, 'a', 18), tuple<int, 
                                   tuple<int, char, int>(18, 'c', 18)});
 set<int> acc({2});
 
-DeterministicFiniteAutomata dfa(X, p, delta, acc);
+DeterministicFiniteAutomaton dfa(X, p, delta, acc);
 ```
 
 ## Partial DFA (Deterministic Finite Automata)
@@ -57,5 +57,5 @@ delta.insert(
          tuple<int, char, int>(3, 'b', 2), tuple<int, char, int>(95, 'a', 2)});
 acc.insert({2});
 
-PartialDeterministicFiniteAutomata pdfa(X, p, delta, acc);
+PartialDeterministicFiniteAutomaton pdfa(X, p, delta, acc);
 ```
