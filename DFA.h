@@ -16,7 +16,7 @@ private:
     // Set of accepting states
     std::set<int> acc;
 public:
-    // Method to run the automata with an input
+    // Method to run the automaton with an input
     bool accepts(std::string word);
 
     DeterministicFiniteAutomaton(std::set<int> states, int initialState,
