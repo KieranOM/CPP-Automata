@@ -1,5 +1,8 @@
 # C++ Automata
-Implementations of different types of automata as taught in my Models of Computation module at University.
+Implementations of different types of automata as taught in my Models of Computation module at University. I have implemented made:
+
+- [Deterministic Finite Automata](#dfa-deterministic-finite-automata)
+- [Partial Deterministic Finite Automata](#partial-dfa-deterministic-finite-automata)
 
 ## DFA (Deterministic Finite Automata)
 
