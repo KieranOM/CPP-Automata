@@ -8,10 +8,10 @@ Implementations of different types of automata as taught in my Models of Computa
 
 These types of automata consist of the following properties:
 
-- A finite set ![X](https://latex.codecogs.com/gif.latex?X) of values
-- An initial state ![p belongs to X](https://latex.codecogs.com/gif.latex?p%5Cin%20X)
-- A transition function ![X x Sigma -> X](https://latex.codecogs.com/gif.latex?%5Cdelta%3AX%5Ctimes%5CSigma%5Crightarrow%20X)
-- A set of accepting states ![Acc is a subset of X](https://latex.codecogs.com/gif.latex?Acc%5Csubseteq%20X)
+- A finite set ![X](https://latex.codecogs.com/png.latex?X) of values
+- An initial state ![p belongs to X](https://latex.codecogs.com/png.latex?p%5Cin%20X)
+- A transition function ![X x Sigma -> X](https://latex.codecogs.com/png.latex?%5Cdelta%3AX%5Ctimes%5CSigma%5Crightarrow%20X)
+- A set of accepting states ![Acc is a subset of X](https://latex.codecogs.com/png.latex?Acc%5Csubseteq%20X)
 
 The implementation assumes a well-formed DFA will be created with a complete transition function. The example given in `main.cpp` is the equivalent of the regex `c(bb|ca)*`. The example given is the following:
 
@@ -38,10 +38,10 @@ A partial DFA is similar to a regular DFA; however, the transition function in t
 
 They are made of the following properties:
 
-- A finite set ![X](https://latex.codecogs.com/gif.latex?X) of values
-- An initial state ![p belongs to X](https://latex.codecogs.com/gif.latex?p%5Cin%20X)
-- A **partial** transition function ![X x Sigma -|> X](https://latex.codecogs.com/gif.latex?%5Cdelta%3A%20X%5Ctimes%5CSigma%5Cpto%7B%5Cmathrel%7B%5Cooalign%7B%5Chfil%24%5Cmapstochar%24%5Chfil%5Ccr%24%5Cto%24%5Ccr%7D%7D%7DX)
-- A set of accepting states ![Acc is a subset of X](https://latex.codecogs.com/gif.latex?Acc%5Csubseteq%20X)
+- A finite set ![X](https://latex.codecogs.com/png.latex?X) of values
+- An initial state ![p belongs to X](https://latex.codecogs.com/png.latex?p%5Cin%20X)
+- A **partial** transition function ![X x Sigma -|> X](https://latex.codecogs.com/png.latex?%5Cdelta%3A%20X%5Ctimes%5CSigma%5Cpto%7B%5Cmathrel%7B%5Cooalign%7B%5Chfil%24%5Cmapstochar%24%5Chfil%5Ccr%24%5Cto%24%5Ccr%7D%7D%7DX)
+- A set of accepting states ![Acc is a subset of X](https://latex.codecogs.com/png.latex?Acc%5Csubseteq%20X)
 
 The example given in `main.cpp` is the equivalent DFA above, which is of the regex `c(bb|ca)*`. The example given is the following:
 
