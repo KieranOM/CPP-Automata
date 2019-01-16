@@ -9,7 +9,7 @@ class DeterministicFiniteAutomaton {
 private:
     // Finite set of states X
     std::set<int> X;
-    // Initial state, where p belongs to X;
+    // Initial state, where p belongs to X
     int p;
     // Transition function delta: X x Sigma -> X
     std::set<std::tuple<int, char, int>> delta;
