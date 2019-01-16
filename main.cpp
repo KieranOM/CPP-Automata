@@ -31,7 +31,9 @@ int main() {
            dfa.accepts("cbbbbcabbcabbbbcacacacabbca") ? "true" : "false");
 
     // Clear the sets for re-use
-    X.clear(); delta.clear(); acc.clear();
+    X.clear();
+    delta.clear();
+    acc.clear();
 
     // Equivalent Partial DFA to the DFA above
     X.insert({7, 3, 2, 95});
@@ -44,13 +46,13 @@ int main() {
     PartialDeterministicFiniteAutomata pdfa(X, p, delta, acc);
 
     printf("\nPartial DFA equivalent to regex of c(bb|ca)*\n");
-    printf("Testing 'c': %s\n", dfa.accepts("c") ? "true" : "false");
-    printf("Testing 'a': %s\n", dfa.accepts("a") ? "true" : "false");
-    printf("Testing 'cbb': %s\n", dfa.accepts("cbb") ? "true" : "false");
-    printf("Testing 'cbba': %s\n", dfa.accepts("cbba") ? "true" : "false");
-    printf("Testing 'bbca': %s\n", dfa.accepts("bbca") ? "true" : "false");
+    printf("Testing 'c': %s\n", pdfa.accepts("c") ? "true" : "false");
+    printf("Testing 'a': %s\n", pdfa.accepts("a") ? "true" : "false");
+    printf("Testing 'cbb': %s\n", pdfa.accepts("cbb") ? "true" : "false");
+    printf("Testing 'cbba': %s\n", pdfa.accepts("cbba") ? "true" : "false");
+    printf("Testing 'bbca': %s\n", pdfa.accepts("bbca") ? "true" : "false");
     printf("Testing 'cbbbbcabbcabbbbcacacacabbca': %s\n",
-           dfa.accepts("cbbbbcabbcabbbbcacacacabbca") ? "true" : "false");
+           pdfa.accepts("cbbbbcabbcabbbbcacacacabbca") ? "true" : "false");
 
     return 0;
 }
