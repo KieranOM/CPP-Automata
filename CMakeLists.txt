@@ -3,4 +3,4 @@ project(CPP_Automata)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CPP_Automata main.cpp DFA.cpp DFA.h)
+add_executable(CPP_Automata main.cpp DFA.cpp DFA.h PDFA.cpp PDFA.h)
