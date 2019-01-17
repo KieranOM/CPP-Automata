@@ -20,8 +20,8 @@ bool DeterministicFiniteAutomaton::accepts(std::string word) {
 };
 
 DeterministicFiniteAutomaton::DeterministicFiniteAutomaton(std::set<int> states, int initialState,
-                                                         std::set<std::tuple<int, char, int>> transitionFunction,
-                                                         std::set<int> acceptingStates) {
+                                                           std::set<std::tuple<int, char, int>> transitionFunction,
+                                                           std::set<int> acceptingStates) {
     X = states;
     p = initialState;
     delta = transitionFunction;

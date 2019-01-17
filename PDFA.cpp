@@ -28,8 +28,8 @@ bool PartialDeterministicFiniteAutomaton::accepts(std::string word) {
 };
 
 PartialDeterministicFiniteAutomaton::PartialDeterministicFiniteAutomaton(std::set<int> states, int initialState,
-                                                                       std::set<std::tuple<int, char, int>> partialTransitionFunction,
-                                                                       std::set<int> acceptingStates) {
+                                                                         std::set<std::tuple<int, char, int>> partialTransitionFunction,
+                                                                         std::set<int> acceptingStates) {
     X = states;
     p = initialState;
     delta = partialTransitionFunction;
