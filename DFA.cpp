@@ -5,7 +5,7 @@ bool DeterministicFiniteAutomaton::accepts(std::string word) {
     // Loop through the input
     for (int i = 0; i < word.length(); i++) {
         char current = word[i];
-        // Loop through the transition functions to find the next state
+        // Loop through the transition function to find the next state
         std::tuple<int, char, int> transition;
         for (std::set<std::tuple<int, char, int>>::iterator itr = delta.begin(); itr != delta.end(); ++itr) {
             transition = *itr;

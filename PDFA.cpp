@@ -6,7 +6,7 @@ bool PartialDeterministicFiniteAutomaton::accepts(std::string word) {
     for (int i = 0; i < word.length(); i++) {
         char current = word[i];
         bool found = false;
-        // Loop through the transition functions to find the next state
+        // Loop through the transition function to find the next state
         std::tuple<int, char, int> transition;
         for (std::set<std::tuple<int, char, int>>::iterator itr = delta.begin(); itr != delta.end(); ++itr) {
             transition = *itr;
