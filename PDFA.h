@@ -20,8 +20,8 @@ public:
     bool accepts(std::string word);
 
     PartialDeterministicFiniteAutomaton(std::set<int> states, int initialState,
-                                       std::set<std::tuple<int, char, int>> transitionFunction,
-                                       std::set<int> acceptingStates);
+                                        std::set<std::tuple<int, char, int>> transitionFunction,
+                                        std::set<int> acceptingStates);
 };
 
 
