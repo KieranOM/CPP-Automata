@@ -3,6 +3,7 @@ Implementations of different types of automata as taught in my Models of Computa
 
 - [Deterministic Finite Automata](#dfa-deterministic-finite-automata)
 - [Partial Deterministic Finite Automata](#partial-dfa-deterministic-finite-automata)
+- [Nondeterministic Finite Automata](#nfa-nondeterministic-finite-automata)
 
 ## DFA (Deterministic Finite Automata)
 
@@ -58,4 +59,36 @@ delta.insert(
 acc.insert({2});
 
 PartialDeterministicFiniteAutomaton pdfa(X, p, delta, acc);
+```
+
+## NFA (Nondeterministic Finite Automata)
+
+A nondeterministic automaton is different to a DFA in the sense that it can have multiple initial states and multiple possible subsequent states from a given state. Due to this, there is no longer a transition function, but instead a transition **relation**.
+
+They are made of the following properties:
+
+- A finite set ![X](https://latex.codecogs.com/png.latex?X) of values
+- A finite set ![P](https://latex.codecogs.com/png.latex?P) of initial states
+- A transition relation ![(x, sigma) belongs to R is a subset of X](https://latex.codecogs.com/png.latex?%28x%2C%20%5Csigma%29%5Cin%20R%5Csubset%20X) where ![x belongs to X and sigma belongs to Sigma](https://latex.codecogs.com/png.latex?x%5Cin%20X%2C%20%5Csigma%5Cin%5CSigma)
+- A set of accepting states ![Acc is a subset of X](https://latex.codecogs.com/png.latex?Acc%5Csubseteq%20X)
+
+Whilst nondeterministic automaton, by themselves, are pointless, in my implementation I have added the the functionality of checking the different possible states to determine whether an inputted word is accepted or not.
+
+The example given in `main.cpp` is the equivalent of the regex `a(b|bbb*|b*a)|b`. The example given is the following:
+
+```cpp
+// Clear the sets for re-use
+X.clear(); delta.clear(); acc.clear();
+
+// Equivalent NFA to the regex of a(b|bbb*|b*a)|b
+X.insert({7, 2, 3, 8});
+set<int> P({7, 3});
+set<tuple<int, char, set<int>>>
+        deltaPrime({tuple<int, char, set<int>>(7, 'a', set<int>({2, 3})),
+                    tuple<int, char, set<int>>(2, 'a', set<int>({8})),
+                    tuple<int, char, set<int>>(2, 'b', set<int>({2, 3})),
+                    tuple<int, char, set<int>>(3, 'b', set<int>({8}))});
+acc.insert(8);
+
+NondeterministicFiniteAutomaton nfa(X, P, deltaPrime, acc);
 ```

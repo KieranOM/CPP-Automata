@@ -1,6 +1,7 @@
 #include <iostream>
 #include "DFA.h"
 #include "PDFA.h"
+#include "NFA.h"
 
 using namespace std;
 
@@ -53,6 +54,30 @@ int main() {
     printf("Testing 'bbca': %s\n", pdfa.accepts("bbca") ? "true" : "false");
     printf("Testing 'cbbbbcabbcabbbbcacacacabbca': %s\n",
            pdfa.accepts("cbbbbcabbcabbbbcacacacabbca") ? "true" : "false");
+
+    // Clear the sets for re-use
+    X.clear();
+    delta.clear();
+    acc.clear();
+
+    // Equivalent NFA to the regex of a(b|bbb*|b*a)|b
+    X.insert({7, 2, 3, 8});
+    set<int> P({7, 3});
+    set<tuple<int, char, set<int>>>
+            deltaPrime({tuple<int, char, set<int>>(7, 'a', set<int>({2, 3})),
+                        tuple<int, char, set<int>>(2, 'a', set<int>({8})),
+                        tuple<int, char, set<int>>(2, 'b', set<int>({2, 3})),
+                        tuple<int, char, set<int>>(3, 'b', set<int>({8}))});
+    acc.insert(8);
+
+    NondeterministicFiniteAutomaton nfa(X, P, deltaPrime, acc);
+
+    printf("\nNFA equivalent to regex of a(b|bbb*|b*a)|b\n");
+    printf("Testing 'abbb': %s\n", nfa.accepts("abbb") ? "true" : "false");
+    printf("Testing 'abb': %s\n", nfa.accepts("abb") ? "true" : "false");
+    printf("Testing 'abba': %s\n", nfa.accepts("abba") ? "true" : "false");
+    printf("Testing 'a': %s\n", nfa.accepts("a") ? "true" : "false");
+    printf("Testing 'aab': %s\n", nfa.accepts("aab") ? "true" : "false");
 
     return 0;
 }
