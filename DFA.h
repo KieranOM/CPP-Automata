@@ -20,7 +20,7 @@ public:
     bool accepts(std::string word);
 
     DeterministicFiniteAutomaton(std::set<int> states, int initialState,
-                                std::set<std::tuple<int, char, int>> transitionFunctions,
+                                std::set<std::tuple<int, char, int>> transitionFunction,
                                 std::set<int> acceptingStates);
 };
 
